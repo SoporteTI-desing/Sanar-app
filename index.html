@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal Sanare | INNVIDA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Sanare</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #0A497B, #001F3F);
-      color: white;
+      background-color: #F5EFE7;
+      color: #0A497B;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     img.logo {
-      width: 160px;
-      margin-bottom: 20px;
+      width: 180px;
+      animation: floatUp 2.5s ease-in-out;
+    }
+    @keyframes floatUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     h1 {
-      font-size: 24px;
-      margin-bottom: 40px;
+      font-size: 26px;
+      margin: 20px 0 40px 0;
+      color: #0A497B;
     }
     .container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
+      animation: fadeIn 2.5s ease-in-out;
     }
     .card {
-      background: rgba(255, 255, 255, 0.1);
+      background: white;
+      border: 2px solid #0A497B;
       padding: 20px;
       border-radius: 15px;
       width: 250px;
       transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
     .card:hover {
-      background: rgba(255, 255, 255, 0.2);
       transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
     button {
-      background: #00AEEF;
+      background: #0A497B;
       border: none;
       color: white;
       padding: 10px 20px;
@@ -52,31 +66,34 @@
       margin-top: 10px;
       font-size: 15px;
     }
-    button:hover { background: #0078A0; }
+    button:hover { background: #08365E; }
+    footer {
+      margin-top: 50px;
+      font-size: 12px;
+      color: #6B5B4B;
+    }
   </style>
 </head>
 <body>
-  <img src="https://soporteti-desing.github.io/assets/sanare_logo.png" class="logo" alt="Sanare Logo" />
-  <h1>Portal Sanare | INNVIDA</h1>
+  <img src="assets/logo.png" class="logo" alt="Sanare Logo" />
+  <h1>Portal Sanare</h1>
   <div class="container">
     <div class="card">
-      <h3>🧬 CRM Médicos INNVIDA</h3>
-      <p>Gestión de médicos, registros y mapa interactivo.</p>
-      <button onclick="window.location.href='./crm/index.html'">Ingresar</button>
+      <h3>🧬 CRM Médicos</h3>
+      <p>Visualiza el registro médico y panel de gestión.</p>
+      <button onclick="window.open('./crm/CRM-medicos.jpg', '_blank')">Abrir</button>
     </div>
     <div class="card">
       <h3>💊 Cotizador Sanare</h3>
-      <p>Genera cotizaciones de medicamentos y servicios médicos.</p>
-      <button onclick="window.location.href='./cotizador/index.html'">Abrir</button>
+      <p>Consulta la cotización de medicamentos y servicios.</p>
+      <button onclick="window.open('./cotizador/Cotizacion-Sanare.pdf', '_blank')">Abrir</button>
     </div>
     <div class="card">
       <h3>📚 Catálogo de Medicamentos</h3>
-      <p>Consulta el listado interactivo de productos Sanaré.</p>
-      <button onclick="window.location.href='./catalogo/index.html'">Explorar</button>
+      <p>Explora el catálogo interactivo de productos Sanaré.</p>
+      <button onclick="window.open('./catalogo/Catalogo-Interactivo.pdf', '_blank')">Abrir</button>
     </div>
   </div>
-  <p style="margin-top:40px; font-size:12px; opacity:0.7;">
-    © 2025 Corporativo INNVIDA / Sanare · Todos los derechos reservados
-  </p>
+  <footer>© 2025 Sanare · Todos los derechos reservados</footer>
 </body>
 </html>
